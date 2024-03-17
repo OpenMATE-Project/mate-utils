@@ -1,0 +1,8 @@
+.deps
+.libs
+Makefile
+Makefile.in
+gnome-system-log
+gnome-system-log-security
+gnome-system-log.desktop
+logview.schemas

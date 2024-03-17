@@ -1,0 +1,54 @@
+GNOME Utilities HACKING
+
+Please send patches to any of the people listed in the MAINTAINERS file
+or, alternatively, attach them to a bugzilla.gnome.org report.
+
+Features that require a patchset or discussion are to be sent to the
+gnome-utils mailing list for review.
+
+If you want to implement a complex feature you can request a branch
+on the mailing list; the branch will be merged when the maintainers will
+deem it ready. GNOME is using SVN which makes branches cheap, but
+merging is still a pain; thus, what will be merged will not have a full
+history.
+
+* Branches
+
+        gnome-2-26
+        gnome-2-24
+        gnome-2-22
+        gnome-2-20
+        ...
+
+These branches are in deep code freeze. Please do not commit even the most
+simple bug fixes to it without emailing the release team
+release-team@gnome.org and MAINTAINERS, getting a confirmation of commit 
+from 2 release team members.
+
+* Special notice for libgdict
+
+Even though libgdict is not inside the Developers Platform, the same rules
+(even if a bit more lax) apply to it:
+
+	- no ABI breaking, unless is absolutely unavoidable;
+	- no ABI/API breaking after ABI/API freeze;
+	- every API change must be *fully* documented;
+
+If you intend to change the API for libgdict, contact Emmanuele Bassi (see
+the MAINTAINERS file) and kindly provide a rationale for the API change,
+with a use case and, possibly, a test case. In case of a patch (see above
+for the diff format), kindly provide:
+
+	- documentation (in gtk-doc form);
+	- a test case;
+
+The versioning scheme for libgdict should follow this ruleset:
+
+	if release is the first of a new development cycle:
+  		major += 1;
+		minor = micro = 0;
+	else if release is before API freeze:
+		minor += 1;
+	else if release is after API freeze:
+		micro += 1;
+

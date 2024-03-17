@@ -1,0 +1,38 @@
+Bugs should be reported to the GNOME bug tracking system under the product
+gnome-utils. It is available at:
+
+        http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-utils
+                                                                                                                                                             
+In the report please include the following information:
+
+        Operating system, distribution and version
+        How to reproduce the bug if possible
+        If the bug was a crash, include the exact text that was printed out
+        A stacktrace where possible [see below]
+
+How to get a stack trace
+------------------------
+If the crash is reproducible, it is possible to get a stack trace and
+attach it to the bug report. The following steps are used to obtain a
+stack trace:
+
+        Run the program in gdb [the GNU debugger] or any other debugger
+                ie. gdb gnome-dictionary
+        Start the program
+                ie. (gdb) run
+        Reproduce the crash and the program will exit to the gdb prompt
+        Get the back trace
+                ie. (gdb) bt
+
+You will need either to compile the program yourself or, if possible,
+install the packages containing the debugging symbols for the program
+otherwise the stack trace obtained will be useless to the developers;
+see this page:
+
+        http://live.gnome.org/GettingTraces
+
+which contains help, tips and other information about getting a valid
+and useful stack trace.
+
+Once you have the stack trace attach a file with it included to the bug
+report.
